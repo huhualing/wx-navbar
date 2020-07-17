@@ -1,0 +1,26 @@
+<view class="nav-wrap {{navbarData.theme ?'themeColor': navbarData.opacity === 1 && navbarData.isBottom ? 'nav-bottom':'' }} {{navbarData.shadow?'nav-shadow':''}}" style="height:{{height}}px;background:rgba(255, 255, 255, {{navbarData.opacity}});">
+	<view wx:if='{{navbarData.showCapsule !==5}}' class='nav-title' style="opacity:{{navbarData.opacity}}">
+		<view wx:if="{{!navbarData.pageTitle}}" class="nav-title-text">{{navbarData.title}}</view>
+	</view>
+	<view style='display: flex; justify-content: space-around;flex-direction: column'>
+		<view class='nav-capsule' style="opacity:{{navbarData.opacity}}">
+			<view style="width:{{ navBack ? navIcon.width - 2 : navIcon.height - 2}}px;height:{{navIcon.height - 2}}px;top:{{navIcon.top}}px" wx:if="{{navbarData.showCapsule === 1 }}" class="icon-back-all  {{navbarData.backColor === 'black' && !navbarData.opacity ?'icon-back-all-white':''}}{{navbarData.backColor === 'black' && navbarData.opacity ?' icon-back-color':''}}">
+				<view class="icon-back {{navBack ? 'marginR' :''}}" bindtap="_navback" wx:if='{{navBack}}'>
+					<view class="iconfont icontoubufanhui arrow-style {{navbarData.theme ?'themeColor': ''}} {{navbarData.backColor === 'black' && !navbarData.opacity ?'arrow-style-white':''}}" />
+				</view>
+				<view class="icon-hr {{navbarData.backColor === 'black' && !navbarData.opacity ?'icon-hr-white':''}}" wx:if='{{navBack}}'></view>
+				<view bindtap='_backhome' class="icon-back {{navBack ? 'marginL' :''}}" wx:if='{{navbarData.showCapsule ===1  && navbarData.showCapsule !==0}}'>
+					<view class="iconfont iconshouye arrow-style-home {{navbarData.theme ?'themeColor': ''}} {{navbarData.backColor === 'black' && !navbarData.opacity ?'arrow-style-white':''}}" />
+				</view>
+			</view>
+			<view wx:if="{{navbarData.showCapsule === 2 }}" bindtap="_handleClick" class="icon-back-all icon-back-border-none rightIn">
+          <slot></slot>
+			</view>
+
+		</view>
+
+	</view>
+
+
+
+</view>

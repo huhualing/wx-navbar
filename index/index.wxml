@@ -1,0 +1,10 @@
+
+  <view class='page-content'>
+    <nav-bar navbar-data="{{navbarData}}" id="navBar">
+    <view style="width:100rpx">自定义?</view>
+    </nav-bar>
+    <!--这里放页面的内容-->
+    <view style="height:300px;background-color:#FF6F43"></view>
+    <view style="height:300px;background-color:#FFD31C"></view>
+    <view style="height:300px;background-color:#09BFEA"></view>
+  </view>

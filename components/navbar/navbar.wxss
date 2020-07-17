@@ -1,0 +1,258 @@
+/* components/navbar/navbar.wxss *//* 顶部要固定定位   标题要居中   自定义按钮和标题要和右边微信原生的胶囊上下对齐 */
+@import '../../app.wxss';
+
+.nav-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0);
+  color: #000;
+  z-index: 9999;
+ 
+}
+.nav-bottom{
+  border-bottom: 1rpx solid #F0F0F0;
+}
+.nav-shadow{
+  border-bottom: 0rpx;
+  box-shadow:0rpx 4rpx 20rpx 0rpx rgba(204,204,204,0.1);
+}
+/* 标题要居中 */
+
+.nav-title {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #000;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  font-family: PingFang-SC-Medium;
+  font-size: 36rpx;
+  font-weight: 600;
+  padding: 4rpx 0;
+}
+.nav-title-text{
+    width: 320rpx;
+    text-align: center;
+    margin: 0 auto;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*首页展示*/
+.nav-title-back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-title-text-item-un{
+    margin-left: 40rpx;
+    color: #999999;
+}
+
+.nav-title-text-item{
+    position: relative;
+}
+.nav-title-text-item::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 12rpx;
+    width: 60rpx;
+    height: 6rpx;
+    margin-left: -30rpx;
+    background-color: #FE7D02;
+    border-radius:4rpx;
+}
+.nav-select {
+  width: 460rpx;
+  height: 60rpx;
+  background:rgba(0,0,0,0.15);
+  /* border:2rpx solid rgba(255, 255, 255, 0.2); */
+  border-radius: 32rpx;
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+
+.nav-select::after {
+  content: " ";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+    border-radius: 32rpx;
+  background-color: #eee;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-header-text {
+  font-size: 32rpx;
+}
+
+.nav-header-back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10rpx;
+  top: -12rpx;
+  width: 460rpx;
+  height: 64rpx;
+  animation: showHeader 0.2s linear;
+}
+
+
+.icon-back-all{
+  border-radius:32rpx;
+    border: 2rpx solid rgba(0, 0, 0, 0.06);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+
+}
+
+.search-style{
+    font-size: 36rpx;
+}
+.icon-back-all-white{
+      border: 1rpx solid rgba(255,255,255,0.3);
+        background-color: rgba(0, 0, 0, 0.14);
+}
+.icon-back-color{
+  background-color: rgba(255,255,255,0.6);
+}
+
+
+.icon-back-border-none{
+    border: none;
+}
+.icon-back{
+    width: calc(50% - 1rpx );
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marginR{
+  
+}
+.marginL{
+
+}
+.icon-hr{
+  width: 2rpx;
+  height: 38rpx;
+  background-color: rgba(0,0,0,0.08);
+}
+.icon-hr-white{
+     background-color: #ffffff2c;
+}
+.liebiaoyesousuo {
+  font-size: 28rpx;
+  color: #fff;
+  margin: 0 6px 0 10px;
+}
+
+.nav-select-text {
+  font-size: 28rpx;
+ color: #fff;
+}
+
+.nav-capsule {
+  max-width: 460rpx;
+  height: 66rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  padding: 0 0 16rpx 20rpx;
+}
+
+.arrow-style {
+  font-size: 30rpx;
+  color: #000;
+}
+.arrow-style-home{
+    font-size: 34rpx;
+  color: #000;
+}
+.arrow-style-white{
+    color: #fff;
+}
+.navbar-v-line {
+  width: 1px;
+  height: 32rpx;
+  background-color: #e5e5e5;
+}
+
+.back-pre, .back-home {
+  width: 32rpx;
+  height: 36rpx;
+  margin-top: 4rpx;
+  padding: 10rpx;
+}
+
+.nav-capsule .back-home {
+  width: 36rpx;
+  height: 40rpx;
+  margin-top: 3rpx;
+}
+
+
+.themeColor{
+  background: #FF9800;
+  color: #fff;
+}
+
+.rightIn {
+    -webkit-animation-name: rightIn;
+    animation-name: rightIn;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    animation-duration: 0.25s;
+}
+@keyframes rightIn {
+  0% {
+      transform: translate(80%,20%) scale(0.6);
+      opacity: 0;
+  }
+
+  100% {
+     transform: translate(0%,0%) scale(1);
+   opacity: 1;
+  }
+}
+
+
+@keyframes showHeader {
+  0% {
+    left: 0rpx;
+    top: 0rpx;
+    opacity: 0;
+  }
+
+  100% {
+    left: 10rpx;
+    top: -12rpx;
+    opacity: 1;
+  }
+}
